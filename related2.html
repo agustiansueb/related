@@ -48,11 +48,24 @@ homePage: getQueryVariable("url"),
 				   titleLength: &quot;auto&quot;,
 				   thumbnailSize: 250,
 				   noImage: &quot;//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaGZu9PQ/w250-h250-c/no-image.png&quot;,
-				   containerId: &quot;related-post-<data:post.id/>&quot;,
-				   newTabLink: false,
+				    newTabLink: false,
 				   moreText: &quot;Read More&quot;,
 				   widgetStyle: 3,
-				   callBack: function() {}
+				   callBack: function() {
+ var $container = $('#' + this.containerId + ' > ul'),
+                $list = $container.find('li'),
+                innerHeight = $list.first().height(),
+                outerHeight = $list.first().outerHeight(true);
+            // Container & list height setup
+            $container.css({
+                "height": outerHeight * $list.length / 2,
+                "overflow": "hidden"
+            });
+            $list.css({
+                "height": innerHeight,
+                "overflow": "hidden"
+            });
+}
 				   };
 			   </script>
 			   <script>
