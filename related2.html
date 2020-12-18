@@ -41,8 +41,8 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 			   <script>
 				   var labelArray = [<b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'>&quot;<data:label.name/>&quot;<b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop></b:if>];
 				   var relatedPostConfig = {
-				   homePage: &quot;<data:blog.homepageUrl/>&quot;,
-				   widgetTitle: &quot;&lt;div class=&#39;label-line&#39;&gt;&lt;h4&gt;Related Posts&lt;/h4&gt;&lt;/div&gt;&quot;,
+homePage: getQueryVariable("url"),
+				     widgetTitle: &quot;&lt;div class=&#39;label-line&#39;&gt;&lt;h4&gt;Related Posts&lt;/h4&gt;&lt;/div&gt;&quot;,
 				   numPosts: 4,
 				   summaryLength: 370,
 				   titleLength: &quot;auto&quot;,
